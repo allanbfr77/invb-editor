@@ -6,7 +6,7 @@ import { submitFeedback, MAX_MESSAGE_LENGTH } from "@/feedback";
 const submitSchema = z.object({
 	message: z
 		.string()
-		.min(1, "Message is required")
+		.min(1, "A mensagem é obrigatória")
 		.max(MAX_MESSAGE_LENGTH, "Message too long"),
 });
 

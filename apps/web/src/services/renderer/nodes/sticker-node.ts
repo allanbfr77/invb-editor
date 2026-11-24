@@ -38,7 +38,7 @@ export function loadStickerSource({
 		await new Promise<void>((resolve, reject) => {
 			image.onload = () => resolve();
 			image.onerror = () =>
-				reject(new Error(`Failed to load sticker: ${stickerId}`));
+				reject(new Error(`Não foi possível carregar a figurinha: ${stickerId}`));
 			image.src = url;
 		});
 

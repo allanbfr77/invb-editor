@@ -34,17 +34,17 @@ export async function showMediaUploadToast<T extends MediaUploadToastResult>({
 			if (uploadedCount === 1) {
 				const assetName = assetNames?.[0];
 				return assetName
-					? `${assetName} has been uploaded`
-					: "1 media asset has been uploaded";
+					? `${assetName} foi importado`
+					: "1 mídia foi importada";
 			}
 
 			if (uploadedCount > 1) {
-				return `${uploadedCount} media assets have been uploaded`;
+				return `${uploadedCount} mídias foram importadas`;
 			}
 
-			return "No media assets were uploaded";
+			return "Nenhuma mídia foi importada";
 		},
-		error: `Failed to upload ${getAssetLabel({ count: filesCount })}`,
+		error: `Não foi possível importar ${getAssetLabel({ count: filesCount })}`,
 	});
 
 	return toastPromise.unwrap();

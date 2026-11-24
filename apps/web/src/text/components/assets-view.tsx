@@ -24,9 +24,9 @@ export function TextView() {
 	};
 
 	return (
-		<PanelView title="Text">
+		<PanelView title="Texto">
 			<DraggableItem
-				name="Default text"
+				name="Texto padrão"
 				preview={
 					<div className="bg-accent flex size-full items-center justify-center rounded">
 						<span className="text-xs select-none">Default text</span>
@@ -36,7 +36,7 @@ export function TextView() {
 					id: "temp-text-id",
 					type: DEFAULTS.text.element.type,
 					name: DEFAULTS.text.element.name,
-					content: "Default text",
+					content: "Texto padrão",
 				}}
 				aspectRatio={1}
 				onAddToTimeline={handleAddToTimeline}

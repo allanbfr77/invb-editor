@@ -188,9 +188,9 @@ export async function GET(request: NextRequest) {
 		if (type === "songs") {
 			return NextResponse.json(
 				{
-					error: "Songs are not available yet",
+					error: "Músicas ainda não estão disponíveis",
 					message:
-						"Song search functionality is coming soon. Try searching for sound effects instead.",
+						"A busca de músicas chega em breve. Por enquanto, busque efeitos sonoros.",
 				},
 				{ status: 501 },
 			);
@@ -221,7 +221,7 @@ export async function GET(request: NextRequest) {
 			const errorText = await response.text();
 			console.error("Freesound API error:", response.status, errorText);
 			return NextResponse.json(
-				{ error: "Failed to search sounds" },
+				{ error: "Falha ao buscar sons" },
 				{ status: response.status },
 			);
 		}
@@ -273,7 +273,7 @@ export async function GET(request: NextRequest) {
 	} catch (error) {
 		console.error("Error searching sounds:", error);
 		return NextResponse.json(
-			{ error: "Internal server error" },
+			{ error: "Erro interno do servidor" },
 			{ status: 500 },
 		);
 	}

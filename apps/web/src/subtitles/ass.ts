@@ -228,31 +228,31 @@ export function parseAss({ input }: { input: string }): ParseSubtitleResult {
 
 	if (strippedInlineTagCueCount > 0) {
 		warnings.add(
-			`Stripped unsupported ASS inline override tags from ${strippedInlineTagCueCount} subtitle cue(s).`,
+			`Tags ASS não suportadas foram removidas de ${strippedInlineTagCueCount} legenda(s).`,
 		);
 	}
 
 	if (ignoredEffectCount > 0) {
 		warnings.add(
-			`Ignored ASS event effects in ${ignoredEffectCount} subtitle cue(s).`,
+			`Efeitos ASS ignorados em ${ignoredEffectCount} legenda(s).`,
 		);
 	}
 
 	if (missingStyleCueCount > 0) {
 		warnings.add(
-			`Fell back to default subtitle styling for ${missingStyleCueCount} cue(s) that referenced missing ASS styles.`,
+			`Estilo padrão usado em ${missingStyleCueCount} legenda(s) com estilos ASS ausentes.`,
 		);
 	}
 
 	if (skippedNonDialogueEventCount > 0) {
 		warnings.add(
-			`Ignored ${skippedNonDialogueEventCount} non-dialogue ASS event(s).`,
+			`${skippedNonDialogueEventCount} evento(s) ASS que não são falas foram ignorados.`,
 		);
 	}
 
 	if (usesHeavilyUnsupportedStyles) {
 		warnings.add(
-			"Ignored unsupported ASS style features such as outline, shadow, rotation, or scaling.",
+			"Recursos de estilo ASS não suportados (contorno, sombra, rotação ou escala) foram ignorados.",
 		);
 	}
 

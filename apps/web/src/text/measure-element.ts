@@ -138,7 +138,7 @@ export function buildTextLayoutParamsFromElement({
 		content: readStringParam({
 			params: element.params,
 			key: "content",
-			fallback: "Default text",
+			fallback: "Texto padrão",
 		}),
 		fontSize: readNumberParam({
 			params: element.params,

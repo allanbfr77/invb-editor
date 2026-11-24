@@ -86,7 +86,7 @@ export function savePreset({ value }: { value: NormalizedCubicBezier }): void {
 			...current,
 			{
 				id: generateUUID(),
-				label: `Custom ${current.length + 1}`,
+				label: `Personalizada ${current.length + 1}`,
 				value,
 				isCustom: true,
 			},

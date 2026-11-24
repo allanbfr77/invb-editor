@@ -26,11 +26,11 @@ function formatKey({ key }: { key: string }): string {
 		.replace("right", "→")
 		.replace("up", "↑")
 		.replace("down", "↓")
-		.replace("space", "Space")
+		.replace("space", "Espaço")
 		.replace("home", "Home")
 		.replace("enter", "Enter")
 		.replace("end", "End")
-		.replace("delete", "Delete")
+		.replace("delete", "Del")
 		.replace("backspace", "Backspace")
 		.replace("-", "+");
 }

@@ -220,7 +220,7 @@ export class InsertElementCommand extends Command {
 			})
 		) {
 			console.error(
-				`${element.type} elements cannot be placed on ${placement.trackType} tracks`,
+				`Elementos do tipo ${element.type} não podem ser colocados em faixas do tipo ${placement.trackType}`,
 			);
 			return null;
 		}

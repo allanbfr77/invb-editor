@@ -28,13 +28,13 @@ export function Onboarding() {
 	const getStepTitle = () => {
 		switch (step) {
 			case 0:
-				return "Welcome to OpenCut Beta! 🎉";
+				return "Bem-vindo ao editor! 🎉";
 			case 1:
-				return "⚠️ This is a super early beta!";
+				return "⚠️ Esta é uma versão bem inicial!";
 			case 2:
-				return "🦋 Have fun testing!";
+				return "🦋 Divirta-se testando!";
 			default:
-				return "OpenCut Onboarding";
+				return "Boas-vindas";
 		}
 	};
 
@@ -44,10 +44,10 @@ export function Onboarding() {
 				return (
 					<div className="space-y-5">
 						<div className="space-y-3">
-							<Title title="Welcome to OpenCut Beta! 🎉" />
-							<Description description="You're among the first to try OpenCut - the fully open source CapCut alternative." />
+							<Title title="Bem-vindo ao editor! 🎉" />
+							<Description description="Este editor é baseado no OpenCut, uma alternativa ao CapCut de código aberto." />
 						</div>
-						<NextButton onClick={handleNext}>Next</NextButton>
+						<NextButton onClick={handleNext}>Próximo</NextButton>
 					</div>
 				);
 			case 1:
@@ -55,11 +55,11 @@ export function Onboarding() {
 					<div className="space-y-5">
 						<div className="space-y-3">
 							<Title title={getStepTitle()} />
-							<Description description="There's still a ton of things to do to make this editor amazing." />
-							<Description description="A lot of features are still missing. We're working hard to build them out!" />
-							<Description description="If you're curious, check out our roadmap [here](https://opencut.app/roadmap)" />
+							<Description description="Ainda há muito a fazer para deixar este editor incrível." />
+							<Description description="Vários recursos ainda estão faltando, mas estamos trabalhando neles!" />
+							<Description description="Se encontrar algum problema, avise a equipe." />
 						</div>
-						<NextButton onClick={handleNext}>Next</NextButton>
+						<NextButton onClick={handleNext}>Próximo</NextButton>
 					</div>
 				);
 			case 2:
@@ -68,10 +68,10 @@ export function Onboarding() {
 						<div className="space-y-3">
 							<Title title={getStepTitle()} />
 							<Description
-								description={`Join our [Discord](${SOCIAL_LINKS.discord}), chat with cool people and share feedback to help make OpenCut the best editor ever.`}
+								description={`Entre no [Discord](${SOCIAL_LINKS.discord}) do OpenCut para conversar e mandar sugestões.`}
 							/>
 						</div>
-						<NextButton onClick={handleClose}>Finish</NextButton>
+						<NextButton onClick={handleClose}>Concluir</NextButton>
 					</div>
 				);
 			default:

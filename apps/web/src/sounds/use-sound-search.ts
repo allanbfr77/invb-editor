@@ -64,11 +64,11 @@ export function useSoundSearch({
 				setHasNextPage({ hasNext: !!data.next });
 				setTotalCount(data.count);
 			} else {
-				setSearchError({ error: `Load more failed: ${response.status}` });
+				setSearchError({ error: `Falha ao carregar mais: ${response.status}` });
 			}
 		} catch (err) {
 			setSearchError({
-				error: err instanceof Error ? err.message : "Load more failed",
+				error: err instanceof Error ? err.message : "Falha ao carregar mais",
 			});
 		} finally {
 			setLoadingMore({ loading: false });
@@ -108,13 +108,13 @@ export function useSoundSearch({
 						setTotalCount({ count: data.count });
 						setCurrentPage({ page: 1 });
 					} else {
-						setSearchError({ error: `Search failed: ${response.status}` });
+						setSearchError({ error: `Falha na busca: ${response.status}` });
 					}
 				}
 			} catch (err) {
 				if (!ignore) {
 					setSearchError({
-						error: err instanceof Error ? err.message : "Search failed",
+						error: err instanceof Error ? err.message : "Falha na busca",
 					});
 				}
 			} finally {

@@ -6,27 +6,27 @@ import type {
 export const TRANSCRIPTION_MODELS: TranscriptionModel[] = [
 	{
 		id: "whisper-tiny",
-		name: "Tiny",
+		name: "Mínimo",
 		huggingFaceId: "onnx-community/whisper-tiny",
-		description: "Fastest, lower accuracy",
+		description: "Mais rápido, menos preciso",
 	},
 	{
 		id: "whisper-small",
-		name: "Small",
+		name: "Pequeno",
 		huggingFaceId: "onnx-community/whisper-small",
-		description: "Good balance of speed and accuracy",
+		description: "Bom equilíbrio entre velocidade e precisão",
 	},
 	{
 		id: "whisper-medium",
-		name: "Medium",
+		name: "Médio",
 		huggingFaceId: "onnx-community/whisper-medium",
-		description: "Higher accuracy, slower",
+		description: "Mais preciso, mais lento",
 	},
 	{
 		id: "whisper-large-v3-turbo",
 		name: "Large v3 Turbo",
 		huggingFaceId: "onnx-community/whisper-large-v3-turbo",
-		description: "Best accuracy, requires WebGPU for good performance",
+		description: "O mais preciso, precisa de WebGPU para bom desempenho",
 	},
 ];
 
