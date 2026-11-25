@@ -65,6 +65,7 @@ import { ProjectInfoDialog } from "@/project/components/project-info-dialog";
 import { RenameProjectDialog } from "@/project/components/rename-project-dialog";
 import { cn } from "@/utils/ui";
 import { editorHref } from "@/project/editor-href";
+import { StudioHomeButton } from "@/components/editor/studio-home";
 const formatProjectDuration = ({
 	duration,
 }: {
@@ -141,6 +142,7 @@ function ProjectsHeader() {
 		<header className="sticky top-0 z-20 px-8 bg-background flex flex-col gap-2">
 			<div className="flex items-center justify-between h-16 pt-2">
 				<div className="flex items-center gap-5">
+					<StudioHomeButton className="-ml-2" />
 					<Breadcrumb>
 						<BreadcrumbList>
 							<BreadcrumbItem>

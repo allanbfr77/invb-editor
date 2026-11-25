@@ -12,6 +12,7 @@ import { RenameProjectDialog } from "@/project/components/rename-project-dialog"
 import { DeleteProjectDialog } from "@/project/components/delete-project-dialog";
 import { useRouter } from "next/navigation";
 import { ExportButton } from "./export-button";
+import { StudioHomeButton } from "./studio-home";
 import { ThemeToggle } from "../theme-toggle";
 import { DEFAULT_LOGO_URL } from "@/site/brand";
 import { toast } from "sonner";
@@ -26,6 +27,7 @@ export function EditorHeader() {
 	return (
 		<header className="bg-background flex h-[3.4rem] items-center justify-between px-3 pt-0.5">
 			<div className="flex items-center gap-1">
+				<StudioHomeButton className="mr-1" />
 				<ProjectDropdown />
 				<EditableProjectName />
 			</div>
