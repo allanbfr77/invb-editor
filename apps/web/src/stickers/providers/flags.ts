@@ -7,10 +7,11 @@ import type {
 } from "../types";
 import { REGIONS, REGION_GROUPS } from "./countries-data";
 import type { CountryRecord, RegionId } from "./countries-data";
+import { withBasePath } from "@/utils/base-path";
 
 const FLAGS_PROVIDER_ID = "flags";
 const DEFAULT_SEARCH_LIMIT = 100;
-const DEFAULT_FLAGS_BASE_URL = "/flags";
+const DEFAULT_FLAGS_BASE_URL = withBasePath("/flags");
 
 let countriesPromise: Promise<CountryRecord[]> | null = null;
 

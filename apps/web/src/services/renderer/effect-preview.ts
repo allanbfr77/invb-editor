@@ -3,9 +3,10 @@ import { effectsRegistry, resolveEffectPasses } from "@/effects";
 import { buildDefaultParamValues } from "@/params/registry";
 import type { ParamValues } from "@/params";
 import { gpuRenderer } from "./gpu-renderer";
+import { withBasePath } from "@/utils/base-path";
 
 const PREVIEW_SIZE = 160;
-const PREVIEW_IMAGE_PATH = "/effects/preview.jpg";
+const PREVIEW_IMAGE_PATH = withBasePath("/effects/preview.jpg");
 
 class EffectPreviewService {
 	private testSourceCanvas: OffscreenCanvas | null = null;

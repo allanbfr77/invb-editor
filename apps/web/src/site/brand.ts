@@ -1,3 +1,4 @@
+import { withBasePath } from "@/utils/base-path";
 export const SITE_URL = "https://opencut.app";
 
 export const SITE_INFO = {
@@ -5,9 +6,9 @@ export const SITE_INFO = {
 	description:
 		"Editor de vídeo do INVB Studio.",
 	url: SITE_URL,
-	openGraphImage: "/open-graph/default.jpg",
-	twitterImage: "/open-graph/default.jpg",
-	favicon: "/favicon.ico",
+	openGraphImage: withBasePath("/open-graph/default.jpg"),
+	twitterImage: withBasePath("/open-graph/default.jpg"),
+	favicon: withBasePath("/favicon.ico"),
 };
 
-export const DEFAULT_LOGO_URL = "/logos/opencut/svg/logo.svg";
+export const DEFAULT_LOGO_URL = withBasePath("/logos/opencut/svg/logo.svg");
