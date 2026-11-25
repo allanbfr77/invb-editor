@@ -34,6 +34,7 @@ import {
 	PlusSignIcon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { soundsErrorMessage } from "@/sounds/search-error";
 
 export function SoundsView() {
 	return (
@@ -78,6 +79,8 @@ function SoundEffectsView() {
 		setTopSoundEffects,
 		setLoading,
 		setError,
+		error,
+		searchError,
 		setHasLoaded,
 		setCurrentPage,
 		setHasNextPage,
@@ -129,7 +132,7 @@ function SoundEffectsView() {
 
 				if (!shouldIgnore) {
 					if (!response.ok) {
-						throw new Error(`Failed to fetch: ${response.status}`);
+						throw new Error(await soundsErrorMessage(response));
 					}
 
 					const data = await response.json();
@@ -166,6 +169,8 @@ function SoundEffectsView() {
 		setTopSoundEffects,
 		setLoading,
 		setError,
+		error,
+		searchError,
 		setHasLoaded,
 		setCurrentPage,
 		setHasNextPage,
@@ -288,7 +293,8 @@ function SoundEffectsView() {
 						))}
 						{!isLoading && !isSearching && displayedSounds.length === 0 && (
 							<div className="text-muted-foreground text-sm">
-								{searchQuery ? "Nenhum som encontrado" : "Nenhum som disponível"}
+								{(searchQuery ? searchError : error) ??
+									(searchQuery ? "Nenhum som encontrado" : "Nenhum som disponível")}
 							</div>
 						)}
 						{isLoadingMore && (

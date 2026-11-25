@@ -4,7 +4,7 @@ import { withBasePath } from "@/utils/base-path";
 
 const GOOGLE_FONTS_CSS = "https://fonts.googleapis.com/css2";
 const FONT_ATLAS_PATH = withBasePath("/fonts/font-atlas.json");
-const FONT_CHUNK_PATH_PREFIX = withBasePath("/fonts/font-chunk-");
+export const FONT_CHUNK_PATH_PREFIX = withBasePath("/fonts/font-chunk-");
 
 const fullLoaded = new Set<string>();
 

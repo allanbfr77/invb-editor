@@ -17,6 +17,7 @@ import { cn } from "@/utils/ui";
 import { ChevronDown, Search } from "lucide-react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { TextIcon } from "@hugeicons/core-free-icons";
+import { FONT_CHUNK_PATH_PREFIX } from "@/fonts/google-fonts";
 
 const FONT_TABS = [
 	{ key: "all", label: "Todas as fontes" },
@@ -194,10 +195,10 @@ function FontSpritePreview({ entry }: { entry: FontAtlasEntry }) {
 				width: entry.w,
 				height: ROW_HEIGHT,
 				backgroundColor: "currentColor",
-				WebkitMaskImage: `url(/fonts/font-chunk-${entry.ch}.avif)`,
+				WebkitMaskImage: `url(${FONT_CHUNK_PATH_PREFIX}${entry.ch}.avif)`,
 				WebkitMaskPosition: `-${entry.x}px -${entry.y}px`,
 				WebkitMaskRepeat: "no-repeat",
-				maskImage: `url(/fonts/font-chunk-${entry.ch}.avif)`,
+				maskImage: `url(${FONT_CHUNK_PATH_PREFIX}${entry.ch}.avif)`,
 				maskPosition: `-${entry.x}px -${entry.y}px`,
 				maskRepeat: "no-repeat",
 				transform: `scale(${PREVIEW_SCALE})`,

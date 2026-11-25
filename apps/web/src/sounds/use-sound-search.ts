@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSoundsStore } from "@/sounds/sounds-store";
+import { soundsErrorMessage } from "@/sounds/search-error";
 
 export function useSoundSearch({
 	query,
@@ -64,7 +65,7 @@ export function useSoundSearch({
 				setHasNextPage({ hasNext: !!data.next });
 				setTotalCount(data.count);
 			} else {
-				setSearchError({ error: `Falha ao carregar mais: ${response.status}` });
+				setSearchError({ error: await soundsErrorMessage(response) });
 			}
 		} catch (err) {
 			setSearchError({
@@ -108,7 +109,7 @@ export function useSoundSearch({
 						setTotalCount({ count: data.count });
 						setCurrentPage({ page: 1 });
 					} else {
-						setSearchError({ error: `Falha na busca: ${response.status}` });
+						setSearchError({ error: await soundsErrorMessage(response) });
 					}
 				}
 			} catch (err) {
