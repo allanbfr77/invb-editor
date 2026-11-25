@@ -14,6 +14,7 @@ import {
 	initializeGpuRenderer,
 	isGpuAvailable,
 } from "@/services/renderer/gpu-renderer";
+import { editorHref } from "@/project/editor-href";
 
 interface EditorProviderProps {
 	projectId: string;
@@ -59,7 +60,7 @@ export function EditorProvider({ projectId, children }: EditorProviderProps) {
 						const newProjectId = await editor.project.createNewProject({
 							name: "Projeto sem título",
 						});
-						router.replace(`/editor/${newProjectId}`);
+						router.replace(editorHref(newProjectId));
 					} catch (_createErr) {
 						setError("Não foi possível criar o projeto");
 						setIsLoading(false);

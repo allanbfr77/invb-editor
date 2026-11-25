@@ -64,6 +64,7 @@ import { DeleteProjectDialog } from "@/project/components/delete-project-dialog"
 import { ProjectInfoDialog } from "@/project/components/project-info-dialog";
 import { RenameProjectDialog } from "@/project/components/rename-project-dialog";
 import { cn } from "@/utils/ui";
+import { editorHref } from "@/project/editor-href";
 const formatProjectDuration = ({
 	duration,
 }: {
@@ -500,7 +501,7 @@ function NewProjectButton() {
 		const projectId = await editor.project.createNewProject({
 			name: "Novo projeto",
 		});
-		router.push(`/editor/${projectId}`);
+		router.push(editorHref(projectId));
 	};
 
 	return (
@@ -652,7 +653,7 @@ function ProjectItem({
 				className="size-5 shrink-0"
 			/>
 
-			<Link href={`/editor/${project.id}`} className="flex-1 min-w-0">
+			<Link href={editorHref(project.id)} className="flex-1 min-w-0">
 				{listRowContent}
 			</Link>
 
@@ -677,7 +678,7 @@ function ProjectItem({
 					<div className="group relative">
 						{isGridView ? (
 							<>
-								<Link href={`/editor/${project.id}`} className="block">
+								<Link href={editorHref(project.id)} className="block">
 									{gridContent}
 								</Link>
 
@@ -946,7 +947,7 @@ function EmptyState() {
 			const projectId = await editor.project.createNewProject({
 				name: "Novo projeto",
 			});
-			router.push(`/editor/${projectId}`);
+			router.push(editorHref(projectId));
 		} catch (error) {
 			toast.error("Não foi possível criar o projeto", {
 				description:
