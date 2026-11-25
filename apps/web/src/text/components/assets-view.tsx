@@ -29,7 +29,7 @@ export function TextView() {
 				name="Texto padrão"
 				preview={
 					<div className="bg-accent flex size-full items-center justify-center rounded">
-						<span className="text-xs select-none">Default text</span>
+						<span className="text-xs select-none">Texto padrão</span>
 					</div>
 				}
 				dragData={{
