@@ -152,6 +152,23 @@ export const ACTIONS = {
 
 export type TAction = keyof typeof ACTIONS;
 
+// Ações que só funcionam com argumentos (ver TActionArgsMap): não podem ir para um atalho de teclado.
+const ACTIONS_WITH_REQUIRED_ARGS: ReadonlySet<string> = new Set<TAction>([
+	"remove-media-asset",
+	"remove-media-assets",
+]);
+
+/** Ação conhecida que pode ser disparada sem argumentos (por atalho de teclado, por exemplo). */
+export function isActionWithOptionalArgs(
+	value: unknown,
+): value is TActionWithOptionalArgs {
+	return (
+		typeof value === "string" &&
+		Object.hasOwn(ACTIONS, value) &&
+		!ACTIONS_WITH_REQUIRED_ARGS.has(value)
+	);
+}
+
 const ACTION_DEFAULT_SHORTCUTS = [
 	["toggle-play", ["space", "k"]],
 	["seek-forward", ["l"]],

@@ -24,3 +24,5 @@ target/
 .cargo-tools/
 
 rust-migration-notes.md
+# exportação estática (bun run build:studio)
+apps/web/out/

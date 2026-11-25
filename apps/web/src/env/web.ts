@@ -10,7 +10,7 @@ const webEnvSchema = z.object({
 	NEXT_PUBLIC_SITE_URL: z.url().default("http://localhost:3000"),
 
 	// Server
-	FREESOUND_CLIENT_ID: z.string(),
+	FREESOUND_CLIENT_ID: z.string().optional(),
 	FREESOUND_API_KEY: z.string(),
 });
 
