@@ -32,20 +32,22 @@ import {
 	Bookmark02Icon,
 	Delete02Icon,
 	SnowIcon,
-	ScissorIcon,
 	MagnetIcon,
 	SearchAddIcon,
 	SearchMinusIcon,
 	Copy01Icon,
-	AlignLeftIcon,
-	AlignRightIcon,
 	Link02Icon,
 	Layers01Icon,
 	Chart03Icon,
 	Unlink02Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { OcRippleIcon } from "@/components/icons";
+import {
+	OcDeleteLeftIcon,
+	OcDeleteRightIcon,
+	OcRippleIcon,
+	OcSplitIcon,
+} from "@/components/icons";
 import { GraphEditorPopover } from "./graph-editor/popover";
 import { PopoverTrigger } from "@/components/ui/popover";
 import { useGraphEditorController } from "./graph-editor/use-controller";
@@ -143,20 +145,20 @@ function ToolbarLeftSection() {
 		<div className="flex items-center gap-1">
 			<TooltipProvider delayDuration={500}>
 				<ToolbarButton
-					icon={<HugeiconsIcon icon={ScissorIcon} />}
-					tooltip="Dividir elemento"
+					icon={<OcSplitIcon size={20} />}
+					tooltip="Dividir"
 					onClick={({ event }) => handleAction({ action: "split", event })}
 				/>
 
 				<ToolbarButton
-					icon={<HugeiconsIcon icon={AlignLeftIcon} />}
-					tooltip="Dividir e remover à esquerda"
+					icon={<OcDeleteLeftIcon size={20} />}
+					tooltip="Excluir à esquerda"
 					onClick={({ event }) => handleAction({ action: "split-left", event })}
 				/>
 
 				<ToolbarButton
-					icon={<HugeiconsIcon icon={AlignRightIcon} />}
-					tooltip="Dividir e remover à direita"
+					icon={<OcDeleteRightIcon size={20} />}
+					tooltip="Excluir à direita"
 					onClick={({ event }) =>
 						handleAction({ action: "split-right", event })
 					}

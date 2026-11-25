@@ -402,3 +402,62 @@ export function OcRippleIcon({
 	);
 }
 
+
+type BracketStyle = "solid" | "faded";
+
+function BracketPair({
+	size = 24,
+	className = "",
+	strokeWidth = 1.5,
+	title,
+	left,
+	right,
+}: IconProps & { title: string; left: BracketStyle; right: BracketStyle }) {
+	const styleFor = (style: BracketStyle) =>
+		style === "faded" ? { opacity: 0.4, strokeDasharray: "2 2" } : {};
+	return (
+		<svg
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			aria-hidden
+			className={className}
+		>
+			<title>{title}</title>
+			<path
+				d="M6.5 6H10V18H6.5"
+				stroke="currentColor"
+				strokeWidth={strokeWidth}
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				{...styleFor(left)}
+			/>
+			<path
+				d="M17.5 6H14V18H17.5"
+				stroke="currentColor"
+				strokeWidth={strokeWidth}
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				{...styleFor(right)}
+			/>
+		</svg>
+	);
+}
+
+export function OcSplitIcon(props: IconProps) {
+	return <BracketPair {...props} title="Dividir" left="solid" right="solid" />;
+}
+
+export function OcDeleteLeftIcon(props: IconProps) {
+	return (
+		<BracketPair {...props} title="Excluir à esquerda" left="faded" right="solid" />
+	);
+}
+
+export function OcDeleteRightIcon(props: IconProps) {
+	return (
+		<BracketPair {...props} title="Excluir à direita" left="solid" right="faded" />
+	);
+}

@@ -67,15 +67,15 @@ export const ACTIONS = {
 		category: "navigation",
 	},
 	split: {
-		description: "Dividir elementos no cursor",
+		description: "Dividir",
 		category: "editing",
 	},
 	"split-left": {
-		description: "Dividir e remover à esquerda",
+		description: "Excluir à esquerda",
 		category: "editing",
 	},
 	"split-right": {
-		description: "Dividir e remover à direita",
+		description: "Excluir à direita",
 		category: "editing",
 	},
 	"delete-selected": {
